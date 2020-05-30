@@ -2,6 +2,11 @@
 import UIKit
 
 class RazeCore {
+    /// Convert a 6 digit hex string into a UIColor instance
+    /// - Parameters:
+    ///   - hexString: 6 digit hex string (prefix # optional)
+    ///   - alpha: opacity (0.0...1.0)
+    /// - Returns: UIColor
     class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
         let r, g, b: CGFloat
         let offset = hexString.hasPrefix("#") ? 1 : 0
