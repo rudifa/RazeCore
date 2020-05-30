@@ -1,13 +1,13 @@
 
 import UIKit
 
-class RazeCore {
+public class RazeCore {
     /// Convert a 6 digit hex string into a UIColor instance
     /// - Parameters:
     ///   - hexString: 6 digit hex string (prefix # optional)
     ///   - alpha: opacity (0.0...1.0)
     /// - Returns: UIColor
-    class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
+    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
         let r, g, b: CGFloat
         let offset = hexString.hasPrefix("#") ? 1 : 0
         let start = hexString.index(hexString.startIndex, offsetBy: offset)
@@ -21,5 +21,10 @@ class RazeCore {
             return UIColor(red: r, green: g, blue: b, alpha: alpha)
         }
         return UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
+    }
+
+    /// RW green color
+    public static var razeColor: UIColor {
+        return self.colorFromHexString("006736")
     }
 }
